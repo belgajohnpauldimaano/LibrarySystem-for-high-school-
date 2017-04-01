@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="library_dbModelStoreContainer" CdmEntityContainer="library_dbEntities">
+    <EntitySetMapping Name="tbl_user">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_user">
+        <MappingFragment StoreEntitySet="tbl_user">
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="un" ColumnName="un" />
+          <ScalarProperty Name="pw" ColumnName="pw" />
+          <ScalarProperty Name="fn" ColumnName="fn" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_student_info">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_student_info">
+        <MappingFragment StoreEntitySet="tbl_student_info">
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="rfid_id" ColumnName="rfid_id" />
+          <ScalarProperty Name="sec_id" ColumnName="sec_id" />
+          <ScalarProperty Name="yr_id" ColumnName="yr_id" />
+          <ScalarProperty Name="stud_active" ColumnName="stud_active" />
+          <ScalarProperty Name="stud_parent_number" ColumnName="stud_parent_number" />
+          <ScalarProperty Name="stud_ln" ColumnName="stud_ln" />
+          <ScalarProperty Name="stud_mn" ColumnName="stud_mn" />
+          <ScalarProperty Name="stud_fn" ColumnName="stud_fn" />
+          <ScalarProperty Name="stud_id_number" ColumnName="stud_id_number" />
+          <ScalarProperty Name="stud_id" ColumnName="stud_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_rfid_tag">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_rfid_tag">
+        <MappingFragment StoreEntitySet="tbl_rfid_tag">
+          <ScalarProperty Name="rfid_tag_assigned" ColumnName="rfid_tag_assigned" />
+          <ScalarProperty Name="rfid_tag_active" ColumnName="rfid_tag_active" />
+          <ScalarProperty Name="rfid_tag_id" ColumnName="rfid_tag_id" />
+          <ScalarProperty Name="rfid_id" ColumnName="rfid_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sec">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_sec">
+        <MappingFragment StoreEntitySet="tbl_sec">
+          <ScalarProperty Name="sec_active" ColumnName="sec_active" />
+          <ScalarProperty Name="sec_details" ColumnName="sec_details" />
+          <ScalarProperty Name="sec_id" ColumnName="sec_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_yr">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_yr">
+        <MappingFragment StoreEntitySet="tbl_yr">
+          <ScalarProperty Name="yr_active" ColumnName="yr_active" />
+          <ScalarProperty Name="yr_details" ColumnName="yr_details" />
+          <ScalarProperty Name="yr_id" ColumnName="yr_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_students_information">
+      <EntityTypeMapping TypeName="library_dbModel.view_students_information">
+        <MappingFragment StoreEntitySet="view_students_information">
+          <ScalarProperty Name="sec_id" ColumnName="sec_id" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="stud_active" ColumnName="stud_active" />
+          <ScalarProperty Name="rfid_id" ColumnName="rfid_id" />
+          <ScalarProperty Name="rfid_tag_active" ColumnName="rfid_tag_active" />
+          <ScalarProperty Name="rfid_tag_id" ColumnName="rfid_tag_id" />
+          <ScalarProperty Name="sec_details" ColumnName="sec_details" />
+          <ScalarProperty Name="yr_details" ColumnName="yr_details" />
+          <ScalarProperty Name="stud_parent_number" ColumnName="stud_parent_number" />
+          <ScalarProperty Name="stud_ln" ColumnName="stud_ln" />
+          <ScalarProperty Name="stud_mn" ColumnName="stud_mn" />
+          <ScalarProperty Name="stud_fn" ColumnName="stud_fn" />
+          <ScalarProperty Name="stud_id_number" ColumnName="stud_id_number" />
+          <ScalarProperty Name="stud_id" ColumnName="stud_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_book_category">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_book_category">
+        <MappingFragment StoreEntitySet="tbl_book_category">
+          <ScalarProperty Name="bc_detail" ColumnName="bc_detail" />
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_book_info">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_book_info">
+        <MappingFragment StoreEntitySet="tbl_book_info">
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="b_isbn" ColumnName="b_isbn" />
+          <ScalarProperty Name="b_acc_no" ColumnName="b_acc_no" />
+          <ScalarProperty Name="b_call_no" ColumnName="b_call_no" />
+          <ScalarProperty Name="b_copyright" ColumnName="b_copyright" />
+          <ScalarProperty Name="b_qty" ColumnName="b_qty" />
+          <ScalarProperty Name="b_publisher" ColumnName="b_publisher" />
+          <ScalarProperty Name="b_author" ColumnName="b_author" />
+          <ScalarProperty Name="b_add_info" ColumnName="b_add_info" />
+          <ScalarProperty Name="b_title" ColumnName="b_title" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_book_information">
+      <EntityTypeMapping TypeName="library_dbModel.view_book_information">
+        <MappingFragment StoreEntitySet="view_book_information">
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="bc_detail" ColumnName="bc_detail" />
+          <ScalarProperty Name="b_copyright" ColumnName="b_copyright" />
+          <ScalarProperty Name="b_qty" ColumnName="b_qty" />
+          <ScalarProperty Name="b_publisher" ColumnName="b_publisher" />
+          <ScalarProperty Name="b_author" ColumnName="b_author" />
+          <ScalarProperty Name="b_add_info" ColumnName="b_add_info" />
+          <ScalarProperty Name="b_title" ColumnName="b_title" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_borrowed_book">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_borrowed_book">
+        <MappingFragment StoreEntitySet="tbl_borrowed_book">
+          <ScalarProperty Name="b_ref_num" ColumnName="b_ref_num" />
+          <ScalarProperty Name="bb_status" ColumnName="bb_status" />
+          <ScalarProperty Name="bb_due_date" ColumnName="bb_due_date" />
+          <ScalarProperty Name="bb_borrowed_date" ColumnName="bb_borrowed_date" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="stud_id_number" ColumnName="stud_id_number" />
+          <ScalarProperty Name="bb_id" ColumnName="bb_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_book_borrow_info">
+      <EntityTypeMapping TypeName="library_dbModel.view_book_borrow_info">
+        <MappingFragment StoreEntitySet="view_book_borrow_info">
+          <ScalarProperty Name="b_ref_num" ColumnName="b_ref_num" />
+          <ScalarProperty Name="sec_id" ColumnName="sec_id" />
+          <ScalarProperty Name="b_author" ColumnName="b_author" />
+          <ScalarProperty Name="b_title" ColumnName="b_title" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="sec_details" ColumnName="sec_details" />
+          <ScalarProperty Name="yr_details" ColumnName="yr_details" />
+          <ScalarProperty Name="stud_ln" ColumnName="stud_ln" />
+          <ScalarProperty Name="stud_fn" ColumnName="stud_fn" />
+          <ScalarProperty Name="stud_id_number" ColumnName="stud_id_number" />
+          <ScalarProperty Name="bb_status" ColumnName="bb_status" />
+          <ScalarProperty Name="bb_due_date" ColumnName="bb_due_date" />
+          <ScalarProperty Name="bb_borrowed_date" ColumnName="bb_borrowed_date" />
+          <ScalarProperty Name="bb_id" ColumnName="bb_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_returned_book">
+      <EntityTypeMapping TypeName="library_dbModel.tbl_returned_book">
+        <MappingFragment StoreEntitySet="tbl_returned_book">
+          <ScalarProperty Name="ref_num" ColumnName="ref_num" />
+          <ScalarProperty Name="rb_over_due_days" ColumnName="rb_over_due_days" />
+          <ScalarProperty Name="rb_returned_date" ColumnName="rb_returned_date" />
+          <ScalarProperty Name="stud_id_number" ColumnName="stud_id_number" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="rb_id" ColumnName="rb_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_book_returned">
+      <EntityTypeMapping TypeName="library_dbModel.view_book_returned">
+        <MappingFragment StoreEntitySet="view_book_returned">
+          <ScalarProperty Name="ref_num" ColumnName="ref_num" />
+          <ScalarProperty Name="sec_id" ColumnName="sec_id" />
+          <ScalarProperty Name="sec_details" ColumnName="sec_details" />
+          <ScalarProperty Name="yr_details" ColumnName="yr_details" />
+          <ScalarProperty Name="stud_ln" ColumnName="stud_ln" />
+          <ScalarProperty Name="stud_fn" ColumnName="stud_fn" />
+          <ScalarProperty Name="stud_id_number" ColumnName="stud_id_number" />
+          <ScalarProperty Name="rb_over_due_days" ColumnName="rb_over_due_days" />
+          <ScalarProperty Name="rb_returned_date" ColumnName="rb_returned_date" />
+          <ScalarProperty Name="b_author" ColumnName="b_author" />
+          <ScalarProperty Name="b_title" ColumnName="b_title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_bookstat">
+      <EntityTypeMapping TypeName="library_dbModel.view_bookstat">
+        <MappingFragment StoreEntitySet="view_bookstat">
+          <ScalarProperty Name="bc_detail" ColumnName="bc_detail" />
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="b_copyright" ColumnName="b_copyright" />
+          <ScalarProperty Name="b_publisher" ColumnName="b_publisher" />
+          <ScalarProperty Name="b_author" ColumnName="b_author" />
+          <ScalarProperty Name="b_title" ColumnName="b_title" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="bb_status" ColumnName="bb_status" />
+          <ScalarProperty Name="bb_due_date" ColumnName="bb_due_date" />
+          <ScalarProperty Name="bb_borrowed_date" ColumnName="bb_borrowed_date" />
+          <ScalarProperty Name="bb_id" ColumnName="bb_id" />
+          <ScalarProperty Name="count_tbl_borrowed_book_b_id_" ColumnName="count(tbl_borrowed_book.b_id)" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

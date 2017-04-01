@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="library_dbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="library_dbEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_user" EntityType="library_dbModel.tbl_user" />
+    <EntitySet Name="tbl_student_info" EntityType="library_dbModel.tbl_student_info" />
+    <EntitySet Name="tbl_rfid_tag" EntityType="library_dbModel.tbl_rfid_tag" />
+    <EntitySet Name="tbl_sec" EntityType="library_dbModel.tbl_sec" />
+    <EntitySet Name="tbl_yr" EntityType="library_dbModel.tbl_yr" />
+    <EntitySet Name="view_students_information" EntityType="library_dbModel.view_students_information" />
+    <EntitySet Name="tbl_book_category" EntityType="library_dbModel.tbl_book_category" />
+    <EntitySet Name="tbl_book_info" EntityType="library_dbModel.tbl_book_info" />
+    <EntitySet Name="view_book_information" EntityType="library_dbModel.view_book_information" />
+    <EntitySet Name="tbl_borrowed_book" EntityType="library_dbModel.tbl_borrowed_book" />
+    <EntitySet Name="view_book_borrow_info" EntityType="library_dbModel.view_book_borrow_info" />
+    <EntitySet Name="tbl_returned_book" EntityType="library_dbModel.tbl_returned_book" />
+    <EntitySet Name="view_book_returned" EntityType="library_dbModel.view_book_returned" />
+    <EntitySet Name="view_bookstat" EntityType="library_dbModel.view_bookstat" />
+  </EntityContainer>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="u_id" />
+    </Key>
+    <Property Name="u_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="un" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="pw" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="fn" Type="String" Nullable="false" MaxLength="70" Unicode="false" FixedLength="false" />
+    <Property Name="role" Type="Int32" Nullable="false" />
+    <Property Name="isactive" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_student_info">
+    <Key>
+      <PropertyRef Name="stud_id" />
+    </Key>
+    <Property Type="Int32" Name="stud_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="stud_id_number" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_fn" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_mn" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_ln" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_parent_number" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="stud_active" />
+    <Property Type="Int32" Name="yr_id" />
+    <Property Type="Int32" Name="sec_id" />
+    <Property Type="String" Name="rfid_id" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="img" MaxLength="16777215" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_rfid_tag">
+    <Key>
+      <PropertyRef Name="rfid_id" />
+    </Key>
+    <Property Type="Int32" Name="rfid_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="rfid_tag_id" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="rfid_tag_active" />
+    <Property Type="String" Name="rfid_tag_assigned" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_sec">
+    <Key>
+      <PropertyRef Name="sec_id" />
+    </Key>
+    <Property Type="Int32" Name="sec_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="sec_details" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="sec_active" />
+  </EntityType>
+  <EntityType Name="tbl_yr">
+    <Key>
+      <PropertyRef Name="yr_id" />
+    </Key>
+    <Property Type="Int32" Name="yr_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="yr_details" />
+    <Property Type="Int32" Name="yr_active" />
+  </EntityType>
+  <EntityType Name="view_students_information">
+    <Key>
+      <PropertyRef Name="stud_id" />
+      <PropertyRef Name="sec_id" />
+    </Key>
+    <Property Type="Int32" Name="stud_id" Nullable="false" />
+    <Property Type="String" Name="stud_id_number" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_fn" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_mn" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_ln" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_parent_number" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="yr_details" />
+    <Property Type="String" Name="sec_details" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="rfid_tag_id" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="rfid_tag_active" />
+    <Property Type="String" Name="rfid_id" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="stud_active" />
+    <Property Type="Binary" Name="img" MaxLength="16777215" FixedLength="false" />
+    <Property Type="Int32" Name="sec_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_book_category">
+    <Key>
+      <PropertyRef Name="bc_id" />
+    </Key>
+    <Property Type="Int32" Name="bc_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="bc_detail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_book_info">
+    <Key>
+      <PropertyRef Name="b_id" />
+    </Key>
+    <Property Type="Int32" Name="b_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="b_title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_add_info" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_author" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_publisher" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="b_qty" Nullable="false" />
+    <Property Type="Int32" Name="b_copyright" Nullable="false" />
+    <Property Type="String" Name="b_call_no" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_acc_no" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_isbn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="bc_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view_book_information">
+    <Key>
+      <PropertyRef Name="b_id" />
+      <PropertyRef Name="b_title" />
+      <PropertyRef Name="b_add_info" />
+      <PropertyRef Name="b_author" />
+      <PropertyRef Name="b_publisher" />
+      <PropertyRef Name="b_qty" />
+      <PropertyRef Name="b_copyright" />
+      <PropertyRef Name="bc_detail" />
+      <PropertyRef Name="bc_id" />
+    </Key>
+    <Property Type="Int32" Name="b_id" Nullable="false" />
+    <Property Type="String" Name="b_title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_add_info" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_author" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_publisher" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="b_qty" Nullable="false" />
+    <Property Type="Int32" Name="b_copyright" Nullable="false" />
+    <Property Type="String" Name="bc_detail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="bc_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_borrowed_book">
+    <Key>
+      <PropertyRef Name="bb_id" />
+    </Key>
+    <Property Type="Int32" Name="bb_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="stud_id_number" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="b_id" Nullable="false" />
+    <Property Type="DateTime" Name="bb_borrowed_date" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="bb_due_date" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="bb_status" Nullable="false" />
+    <Property Type="String" Name="b_ref_num" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="view_book_borrow_info">
+    <Key>
+      <PropertyRef Name="bb_id" />
+      <PropertyRef Name="bb_borrowed_date" />
+      <PropertyRef Name="bb_due_date" />
+      <PropertyRef Name="bb_status" />
+      <PropertyRef Name="b_id" />
+      <PropertyRef Name="b_title" />
+      <PropertyRef Name="b_author" />
+      <PropertyRef Name="sec_id" />
+      <PropertyRef Name="b_ref_num" />
+    </Key>
+    <Property Type="Int32" Name="bb_id" Nullable="false" />
+    <Property Type="DateTime" Name="bb_borrowed_date" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="bb_due_date" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="bb_status" Nullable="false" />
+    <Property Type="String" Name="stud_id_number" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_fn" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_ln" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="yr_details" />
+    <Property Type="String" Name="sec_details" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="b_id" Nullable="false" />
+    <Property Type="String" Name="b_title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_author" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="sec_id" Nullable="false" />
+    <Property Type="String" Name="b_ref_num" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_returned_book">
+    <Key>
+      <PropertyRef Name="rb_id" />
+    </Key>
+    <Property Type="Int32" Name="rb_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="b_id" Nullable="false" />
+    <Property Type="String" Name="stud_id_number" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="rb_returned_date" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="rb_over_due_days" Nullable="false" />
+    <Property Type="String" Name="ref_num" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="view_book_returned">
+    <Key>
+      <PropertyRef Name="b_title" />
+      <PropertyRef Name="b_author" />
+      <PropertyRef Name="rb_returned_date" />
+      <PropertyRef Name="rb_over_due_days" />
+      <PropertyRef Name="sec_id" />
+      <PropertyRef Name="ref_num" />
+    </Key>
+    <Property Type="String" Name="b_title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_author" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="rb_returned_date" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="rb_over_due_days" Nullable="false" />
+    <Property Type="String" Name="stud_id_number" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_fn" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="stud_ln" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="yr_details" />
+    <Property Type="String" Name="sec_details" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="sec_id" Nullable="false" />
+    <Property Type="String" Name="ref_num" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="view_bookstat">
+    <Key>
+      <PropertyRef Name="count_tbl_borrowed_book_b_id_" />
+      <PropertyRef Name="bb_id" />
+      <PropertyRef Name="bb_borrowed_date" />
+      <PropertyRef Name="bb_due_date" />
+      <PropertyRef Name="bb_status" />
+      <PropertyRef Name="b_id" />
+      <PropertyRef Name="b_title" />
+      <PropertyRef Name="b_author" />
+      <PropertyRef Name="b_publisher" />
+      <PropertyRef Name="b_copyright" />
+      <PropertyRef Name="bc_id" />
+      <PropertyRef Name="bc_detail" />
+    </Key>
+    <Property Type="Int64" Name="count_tbl_borrowed_book_b_id_" Nullable="false" />
+    <Property Type="Int32" Name="bb_id" Nullable="false" />
+    <Property Type="DateTime" Name="bb_borrowed_date" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="bb_due_date" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="bb_status" Nullable="false" />
+    <Property Type="Int32" Name="b_id" Nullable="false" />
+    <Property Type="String" Name="b_title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_author" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="b_publisher" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="b_copyright" Nullable="false" />
+    <Property Type="Int32" Name="bc_id" Nullable="false" />
+    <Property Type="String" Name="bc_detail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
